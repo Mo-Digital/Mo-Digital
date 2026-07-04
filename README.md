@@ -24,6 +24,29 @@ npm run watch:css        # baut automatisch bei jeder Änderung neu
 
 Die Tailwind-Konfiguration (Farben, Schriften, Komponenten) liegt in `assets/css/input.css`.
 
+## Deployment (GitHub Pages)
+
+GitHub Pages ist auf "Deploy from a branch" → `main` konfiguriert (klassisches Pages-Setup,
+kein eigener Workflow im Repo nötig). Das heißt konkret:
+
+- **Nur was in `main` liegt, wird live ausgeliefert.** Änderungen, die nur auf einem
+  Feature-/Claude-Branch committet und gepusht wurden, erscheinen nicht auf der Live-Seite,
+  bis dieser Branch per Pull Request (oder Merge) in `main` gelandet ist – auch wenn der
+  Push selbst erfolgreich war.
+- Nach jedem Merge in `main` läuft automatisch ein "pages build and deployment"-Check im
+  Actions-Tab. Grün heißt nur "der aktuelle Stand von `main` wurde erfolgreich ausgeliefert" –
+  nicht zwangsläufig, dass dein letzter Feature-Branch-Commit schon Teil davon ist.
+- Faustregel bei "meine Änderungen sind live nicht sichtbar": zuerst prüfen, ob der Commit
+  wirklich in `main` ist (`git log origin/main`), erst danach an Browser-Cache denken.
+
+### Cache-Busting für CSS/JS
+
+Alle `<link rel="stylesheet">`- und `<script src="...">`-Verweise auf
+`assets/css/style.css` und `assets/js/*.js` tragen einen Versions-Query-Parameter
+(`?v=1`). Erhöhe diese Zahl (`?v=2`, `?v=3`, …) in allen 5 HTML-Dateien, wenn du CSS oder
+JS änderst und neu deployst – sonst kann der Browser eines wiederkehrenden Besuchers die
+alte, gecachte Datei weiterverwenden.
+
 ## Ordnerstruktur
 
 ```
