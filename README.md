@@ -46,8 +46,10 @@ Die Tailwind-Konfiguration (Farben, Schriften, Komponenten) liegt in `assets/css
 Jede Unterseite liegt in einem eigenen Ordner mit `index.html`, damit beim Hosten
 automatisch saubere URLs wie `/kontakt` bzw. `/kontakt/` funktionieren (Netlify, Vercel,
 GitHub Pages, eigener Server – ohne zusätzliche Rewrite-Regeln). Alle internen Links und
-Asset-Pfade sind root-relativ (`/assets/...`, `/kontakt/`), d. h. die Seite muss von der
-Domain-Wurzel ausgeliefert werden.
+Asset-Pfade sind **relativ** (`assets/...` von der Startseite aus, `../assets/...` von den
+Unterseiten aus), d. h. die Seite funktioniert unverändert sowohl auf einer eigenen Domain
+als auch in einem Unterordner – z. B. bei einem GitHub-Pages-Projekt unter
+`https://username.github.io/repo-name/`.
 
 ## Bevor du live gehst: das musst du eintragen
 
