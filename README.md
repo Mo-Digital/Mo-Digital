@@ -120,11 +120,11 @@ Calendly-Widget. Der Calendly-Link ist bereits gesetzt
 sobald verfügbar.
 
 ### 7. Bilder
-Alle `assets/img/*.svg` sind Platzhalter (Portrait, Favicon, OG-Bild). Durch echte
-Fotos/Screenshots (JPG/PNG/WebP) ersetzen und die `<img src="...">`-Pfade in
-den HTML-Dateien entsprechend anpassen. Für das Open-Graph-Bild empfiehlt sich ein
-echtes JPG/PNG (1200×630px) statt SVG, da nicht alle Social-Plattformen
-SVG-Vorschaubilder korrekt darstellen.
+Logo (Header) und beide Portraitfotos (Hero, Über mich) sind bereits eingebunden
+(`assets/images/`), ebenso das Favicon (`assets/favicon/`, aus dem Logo generiert).
+Nur `assets/img/og-image.svg` ist noch ein Platzhalter – für das Open-Graph-Bild
+empfiehlt sich ein echtes JPG/PNG (1200×630px) statt SVG, da nicht alle
+Social-Plattformen SVG-Vorschaubilder korrekt darstellen.
 
 ### 8. Domain
 `https://www.mo-digital.example` ist ein Platzhalter – in `robots.txt`, `sitemap.xml`
