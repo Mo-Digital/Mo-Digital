@@ -130,13 +130,23 @@
         </div>
       </div>
 
-      <!-- Ergebnis: direkt zu Calendly -->
+      <!-- Ergebnis: Klick-zum-Laden-Zustimmung, dann Calendly -->
       <div data-flow-step="3" class="hidden text-center">
         <h2 class="font-display text-lg font-semibold">Wähl dir gleich einen Termin aus</h2>
         <p class="mt-2 text-sm text-[var(--color-text-muted)]">Kostenlos &amp; unverbindlich, 30 Minuten.</p>
 
-        <!-- Calendly Inline-Widget: offizielles Embed-Script -->
-        <div class="calendly-inline-widget mt-6 overflow-hidden rounded-2xl border border-[var(--color-border)]" data-url="https://calendly.com/mo-digital/30min" style="min-width:280px;height:650px;"></div>
+        <div data-calendly-consent class="card mt-6 text-left">
+          <p class="text-sm text-[var(--color-text-muted)]">
+            Für die Terminbuchung wird der externe Dienst Calendly (USA) geladen. Dabei werden Daten an
+            Calendly übermittelt. Mehr dazu in der
+            <a href="../datenschutz/" class="text-[var(--color-accent)] hover:underline">Datenschutzerklärung</a>.
+          </p>
+          <button type="button" data-calendly-load class="btn-primary mt-4 w-full">
+            Termin-Kalender laden &amp; Datenübertragung zustimmen
+          </button>
+        </div>
+
+        <div data-calendly-container class="mt-6 hidden overflow-hidden rounded-2xl border border-[var(--color-border)]"></div>
       </div>
     </div>
   </main>
@@ -192,7 +202,6 @@
   </footer>
 
   <script src="../assets/js/main.js?v=2"></script>
-  <script src="../assets/js/contact-form.js?v=2"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="../assets/js/contact-form.js?v=3"></script>
 </body>
 </html>
